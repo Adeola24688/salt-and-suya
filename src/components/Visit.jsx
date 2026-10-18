@@ -1,38 +1,15 @@
 export default function Visit() {
   return (
-    <section className="visit-section" id="visit">
-      <div className="visit-grid">
-        <div>
-          <h2>Find us</h2>
-          <p className="visit-address">
-            14 Ahmadu Bello Way
-            <br />
-            Victoria Island, Lagos
-          </p>
-          <p className="visit-hours">
-            Tuesday – Sunday, 12:00 – 23:00
-            <br />
-            Closed Mondays
-          </p>
-        </div>
-        <div id="book" className="visit-book">
-          <h2>Book a table</h2>
-          <p>
-            We hold tables by WhatsApp — tell us the day, the time, and how
-            many are eating.
-          </p>
-          <a
-            className="btn btn-primary"
-            href="https://wa.me/2348123456789?text=Hi%2C%20I%27d%20like%20to%20book%20a%20table%20at%20Salt%20%26%20Suya"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Message us on WhatsApp
-          </a>
-          <a className="visit-phone" href="tel:+2348123456789">
-            or call +234 812 345 6789
-          </a>
-        </div>
+    <section className="approach-section shell" id="approach">
+      <div className="approach-heading">
+        <p className="eyebrow">03 / How we work</p>
+        <h2>Less formula. More feeling.</h2>
+        <p>Every brief begins with a place, a set of people, and the chance to do something more considered.</p>
+      </div>
+      <div className="principles">
+        <article className="principle"><span className="principle-number">01</span><div><h3>Pay attention</h3><p>We start by listening, walking, sketching, and understanding what is already here.</p></div><span className="principle-arrow" aria-hidden="true">↘</span></article>
+        <article className="principle"><span className="principle-number">02</span><div><h3>Make it matter</h3><p>We turn the strongest ideas into clear, enduring spaces with character and purpose.</p></div><span className="principle-arrow" aria-hidden="true">↘</span></article>
+        <article className="principle"><span className="principle-number">03</span><div><h3>Leave room</h3><p>We design for change, for the unexpected, and for the life that happens after handover.</p></div><span className="principle-arrow" aria-hidden="true">↘</span></article>
       </div>
     </section>
   );

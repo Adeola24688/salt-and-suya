@@ -1,39 +1,39 @@
 import { useState } from "react";
 
 const LINKS = [
-  { href: "#menu", label: "Menu" },
-  { href: "#story", label: "Story" },
-  { href: "#visit", label: "Visit" },
+  { href: "#work", label: "Selected work" },
+  { href: "#studio", label: "The studio" },
+  { href: "#approach", label: "Approach" },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="site-header">
-      <div className="site-header-inner">
-        <a href="#top" className="wordmark">
-          Salt & Suya
+    <header className="masthead">
+      <div className="masthead-inner shell">
+        <a href="#top" className="brand" aria-label="Fieldwork Studio home">
+          <span className="brand-mark" aria-hidden="true">F</span>
+          <span className="brand-name">Fieldwork <span>Architecture + place</span></span>
         </a>
-        <nav className={`main-nav ${open ? "is-open" : ""}`}>
+        <nav id="main-navigation" className={`primary-nav ${open ? "is-open" : ""}`} aria-label="Main navigation">
           {LINKS.map((link) => (
             <a key={link.href} href={link.href} onClick={() => setOpen(false)}>
               {link.label}
             </a>
           ))}
-          <a href="#book" className="nav-cta" onClick={() => setOpen(false)}>
-            Book a table
+          <a href="#index" className="nav-index" onClick={() => setOpen(false)}>
+            Studio index <span aria-hidden="true">↗</span>
           </a>
         </nav>
         <button
-          className="nav-toggle"
-          aria-label={open ? "Close menu" : "Open menu"}
+          className="menu-toggle"
+          aria-label={open ? "Close navigation" : "Open navigation"}
           aria-expanded={open}
+          aria-controls="main-navigation"
           onClick={() => setOpen((v) => !v)}
         >
-          <span />
-          <span />
-          <span />
+          <span aria-hidden="true" />
         </button>
       </div>
     </header>

@@ -1,60 +1,39 @@
-const MENU = [
+const PROJECTS = [
   {
-    category: "From the grill",
-    items: [
-      { name: "Suya-spiced ribeye, charred onion", price: "12,500" },
-      { name: "Grilled tiger prawns, lime & chili oil", price: "9,000" },
-      { name: "Peppered snail skewers", price: "7,500" },
-      { name: "Whole grilled croaker, ata dindin", price: "10,000" },
-    ],
+    name: "Courtyard House", type: "Private residence · Lagos", year: "2025", label: "Residential",
+    image: "photo-1600607687920-4e2a09cf159d", alt: "Quiet modern residence with warm timber and a planted courtyard",
   },
   {
-    category: "Small plates",
-    items: [
-      { name: "Charred corn, ata rodo butter", price: "3,000" },
-      { name: "Jollof risotto, smoked paprika", price: "6,500" },
-      { name: "Plantain, suya spice, crushed groundnut", price: "3,500" },
-      { name: "Grilled halloumi, pepper jam", price: "5,000" },
-    ],
+    name: "Common Ground", type: "Community workspace · Accra", year: "2024", label: "Workplace",
+    image: "photo-1600210492486-724fe5c67fb0", alt: "Light-filled shared interior with natural materials and generous seating",
   },
   {
-    category: "To drink",
-    items: [
-      { name: "Palm wine spritz", price: "4,000" },
-      { name: "Zobo sorbet float", price: "2,500" },
-      { name: "Chapman, smoked bitters", price: "4,500" },
-      { name: "House natural wine, glass", price: "6,000" },
-    ],
+    name: "The Long Table", type: "Guesthouse & kitchen · Abeokuta", year: "2023", label: "Hospitality",
+    image: "photo-1600566753086-00f18fb6b3ea", alt: "Textured contemporary interior looking out toward tropical greenery",
   },
 ];
 
 export default function Menu() {
   return (
-    <section className="menu-section" id="menu">
-      <div className="section-heading">
-        <h2>Tonight's fire</h2>
-        <p>A short menu, changed with what the market gives us that week.</p>
+    <section className="work-section shell" id="work">
+      <div className="section-topline">
+        <div><p className="eyebrow">01 / Selected work</p><h2>Built around life.</h2></div>
+        <span className="section-count">2023 — 2025&nbsp; / &nbsp;03 projects</span>
       </div>
-      <div className="menu-grid">
-        {MENU.map((group) => (
-          <div className="menu-group" key={group.category}>
-            <h3>{group.category}</h3>
-            <ul>
-              {group.items.map((item) => (
-                <li key={item.name}>
-                  <span className="menu-item-name">{item.name}</span>
-                  <span className="menu-leader" aria-hidden="true" />
-                  <span className="menu-item-price">₦{item.price}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+      <div className="project-grid">
+        {PROJECTS.map((project, index) => (
+          <article className="project" key={project.name}>
+            <div className="project-image">
+              <img src={`https://images.unsplash.com/${project.image}?auto=format&fit=crop&w=1400&q=85`} alt={project.alt} loading="lazy" />
+              <span className="project-tag">{project.label}</span>
+            </div>
+            <div className="project-caption">
+              <div><h3>{project.name}</h3><p>{project.type}</p></div>
+              <span className="project-meta">0{index + 1} / {project.year}</span>
+            </div>
+          </article>
         ))}
       </div>
-      <p className="menu-note">
-        Full menu, including sides and dessert, available on request — ask
-        your server about tonight's specials.
-      </p>
     </section>
   );
 }
